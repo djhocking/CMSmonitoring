@@ -13,3 +13,8 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/djhocking/CMSmonitoring
 BugReports: https://github.com/djhocking/CMSmonitoring/issues
+RoxygenNote: 7.0.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
