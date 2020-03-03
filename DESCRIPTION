@@ -1,7 +1,7 @@
 Package: CMSmonitoring
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R:
     person(given = "First",
            family = "Last",
            role = c("aut", "cre"),
@@ -14,7 +14,11 @@ LazyData: true
 URL: https://github.com/djhocking/CMSmonitoring
 BugReports: https://github.com/djhocking/CMSmonitoring/issues
 RoxygenNote: 7.0.2
-Suggests: 
+Suggests:
     knitr,
-    rmarkdown
+    rmarkdown,
+    devtools,
+    git2r
 VignetteBuilder: knitr
+Imports: bookdown,
+    here

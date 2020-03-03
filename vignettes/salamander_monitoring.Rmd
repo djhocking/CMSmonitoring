@@ -16,4 +16,48 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(CMSmonitoring)
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(dplyr))
+
+set.seed(2143585291)
 ```
+
+## Salamander abundance over time
+
+Let's simulate salamander abundance at 300 locations. We will assume that the density is very low for this species and 
+
+```{r}
+dm_list <- sim_dm(nsites = 300, lambda = 3, nyears = 20, phi = 0.90, r = 0.1, p = 0.3, plot = FALSE)
+```
+
+Plot the total abundance across sites over time
+
+```{r}
+df_total <- data.frame(N_total = colSums(dm_list$N), occ = colSums(dm_list$pres)/dm_list$nsites, year = 1:dm_list$nyears)
+
+ggplot(df_total, aes(year, N_total)) + geom_line()
+
+```
+
+Check the proportion of occupied sites each year.
+
+```{r}
+ggplot(df_total, aes(year, occ)) + geom_line()
+```
+
+## Analyze data varying sample sites, visits, and years
+
+* Number of sites = 50
+* Number of visits = 
+
+```{r}
+n_sites <- c(20, 50, 100, 200)
+n_visits <- c(2, 3, 4)
+
+
+
+```
+
+
+
+
